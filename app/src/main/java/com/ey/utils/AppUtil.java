@@ -28,9 +28,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.ey.R;
 
-//import com.github.bkhezry.weather.R;
-//import com.github.bkhezry.weather.listener.OnSetApiKeyEventListener;
-//import com.github.pwittchen.prefser.library.rx2.Prefser;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
@@ -99,99 +96,7 @@ public class AppUtil {
     }
     return R.raw.unknown;
   }
-//
-//
-//  /**
-//   * Set text of textView with html format of html parameter
-//   *
-//   * @param textView instance {@link TextView}
-//   * @param html     String
-//   */
-//  @SuppressLint("ClickableViewAccessibility")
-//  public static void setTextWithLinks(TextView textView, CharSequence html) {
-//    textView.setText(html);
-//    textView.setOnTouchListener(new View.OnTouchListener() {
-//      @Override
-//      public boolean onTouch(View v, MotionEvent event) {
-//        int action = event.getAction();
-//        if (action == MotionEvent.ACTION_UP ||
-//            action == MotionEvent.ACTION_DOWN) {
-//          int x = (int) event.getX();
-//          int y = (int) event.getY();
-//
-//          TextView widget = (TextView) v;
-//          x -= widget.getTotalPaddingLeft();
-//          y -= widget.getTotalPaddingTop();
-//
-//          x += widget.getScrollX();
-//          y += widget.getScrollY();
-//
-//          Layout layout = widget.getLayout();
-//          int line = layout.getLineForVertical(y);
-//          int off = layout.getOffsetForHorizontal(line, x);
-//
-//          ClickableSpan[] link = Spannable.Factory.getInstance()
-//              .newSpannable(widget.getText())
-//              .getSpans(off, off, ClickableSpan.class);
-//
-//          if (link.length != 0) {
-//            if (action == MotionEvent.ACTION_UP) {
-//              link[0].onClick(widget);
-//            }
-//            return true;
-//          }
-//        }
-//        return false;
-//      }
-//    });
-//  }
-//
-//  /**
-//   * Change string to html format
-//   *
-//   * @param htmlText String text
-//   * @return String text
-//   */
-//  public static CharSequence fromHtml(String htmlText) {
-//    if (TextUtils.isEmpty(htmlText)) {
-//      return null;
-//    }
-//    CharSequence spanned;
-//    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-//      spanned = Html.fromHtml(htmlText, Html.FROM_HTML_MODE_LEGACY);
-//    } else {
-//      spanned = Html.fromHtml(htmlText);
-//    }
-//    return trim(spanned);
-//  }
-//
-//  /**
-//   * Trim string text
-//   *
-//   * @param charSequence String text
-//   * @return String text
-//   */
-//
-//  private static CharSequence trim(CharSequence charSequence) {
-//    if (TextUtils.isEmpty(charSequence)) {
-//      return charSequence;
-//    }
-//    int end = charSequence.length() - 1;
-//    while (Character.isWhitespace(charSequence.charAt(end))) {
-//      end--;
-//    }
-//    return charSequence.subSequence(0, end + 1);
-//  }
-//
-//  /**
-//   * Check version of SDK
-//   *
-//   * @param version int SDK version
-//   * @return boolean value
-//   */
-//  static boolean isAtLeastVersion(int version) {
-//    return Build.VERSION.SDK_INT >= version;
-//  }
+
 
   /**
    * Check current direction of application. if is RTL return true
@@ -276,45 +181,4 @@ public class AppUtil {
     if (cm == null) return null;
     return cm.getActiveNetworkInfo();
   }
-
-//  /**
-//   * Determine if the navigation bar will be on the bottom of the screen, based on logic in
-//   * PhoneWindowManager.
-//   */
-//  static boolean isNavBarOnBottom(@NonNull Context context) {
-//    final Resources res = context.getResources();
-//    final Configuration cfg = context.getResources().getConfiguration();
-//    final DisplayMetrics dm = res.getDisplayMetrics();
-//    boolean canMove = (dm.widthPixels != dm.heightPixels &&
-//        cfg.smallestScreenWidthDp < 600);
-//    return (!canMove || dm.widthPixels < dm.heightPixels);
-//  }
-//
-//  static Interpolator getFastOutSlowInInterpolator(Context context) {
-//    if (fastOutSlowIn == null) {
-//      fastOutSlowIn = AnimationUtils.loadInterpolator(context,
-//          android.R.interpolator.fast_out_slow_in);
-//    }
-//    return fastOutSlowIn;
-//  }
-//
-//  /**
-//   * Set the alpha component of {@code color} to be {@code alpha}.
-//   */
-//  static @CheckResult
-//  @ColorInt
-//  int modifyAlpha(@ColorInt int color,
-//                  @IntRange(from = 0, to = 255) int alpha) {
-//    return (color & 0x00ffffff) | (alpha << 24);
-//  }
-//
-//  /**
-//   * Set the alpha component of {@code color} to be {@code alpha}.
-//   */
-//  public static @CheckResult
-//  @ColorInt
-//  int modifyAlpha(@ColorInt int color,
-//                  @FloatRange(from = 0f, to = 1f) float alpha) {
-//    return modifyAlpha(color, (int) (255f * alpha));
-//  }
 }
