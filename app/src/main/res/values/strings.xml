@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">EY WeatherApp</string>
+<!--    <string name="cancel_label">Cancel</string>-->
+<!--    <string name="store_label">Store</string>-->
+<!--    <string name="license_title">License</string>-->
+<!--    <string name="libraries_title">Libraries &amp; Resources</string>-->
+<!--    <string name="developer_info_title">Developer Info</string>-->
+<!--    <string name="design_api_title">Design &amp; API</string>-->
+<!--    <string name="application_info_title">Application Info</string>-->
+<!--    <string name="cities">EY WeatherApp</string>-->
+    <string name="cityName">cityName</string>
+
+
+    <string name="current_label">Current</string>
+    <string name="humidity_label">Humidity</string>
+    <string name="wind_label">Wind</string>
+</resources>
